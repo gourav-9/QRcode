@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>QR Code Generator</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+  <div class="container">
+    <div class="qrContainer">
+      <span>Generate QR</span>
+      <input type="text" placeholder="Text or URL" id="qrValue">
+      <div class="qrDiv" id="qrDiv">
+        <a href="" id="a" download="qr.png">
+        <img src="" id="qrImg" class="img">
+        </a>
+      </div>
+      <button onclick="getQR()">Generate</button>
+    </div>
+    
+  </div>
+  
+  <script>
+    
+    console.log('Hello World!');
+function getQR(){
+  
+  let qrDiv= document.getElementById('qrDiv')
+let qrValue= document.getElementById('qrValue')
+if(qrValue.value!=''){
+let qrImg= document.getElementById('qrImg')
+
+  
+  let url='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+qrValue.value
+  qrImg.src=url
+  
+  a.href=url
+ 
+qrDiv.style.display='flex'
+qrDiv.style.maxHeight='15em'
+  
+}
+else{
+  let qrValue= document.getElementById('qrValue')
+qrValue.style.animation='anim .1s linear 10'
+setTimeout(()=>{
+  qrValue.style.animation=''
+},1000)
+  
+}
+let qrImg= document.getElementById('qrImg')
+
+
+
+}
+  </script>
+</body>
+</html>
